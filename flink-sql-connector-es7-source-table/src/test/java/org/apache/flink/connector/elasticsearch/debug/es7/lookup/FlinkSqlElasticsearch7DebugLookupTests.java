@@ -34,7 +34,7 @@ public class FlinkSqlElasticsearch7DebugLookupTests extends ElasticsearchTestBas
         Configurator.setLevel("org.apache.flink.connector.elasticsearch.source.ElasticsearchLookup.READER", Level.DEBUG);
         Configurator.setLevel("org.apache.flink.connector.elasticsearch.source.ElasticsearchLookup.RUNNING", Level.INFO);
         Configurator.setLevel("org.apache.flink.connector.elasticsearch.source.ElasticsearchLookup.REQUEST", Level.DEBUG);
-        Configurator.setLevel("org.apache.flink.connector.elasticsearch.source.reader.ElasticsearchLookupFullCacheLoader.REQUEST", Level.DEBUG);
+        Configurator.setLevel("org.apache.flink.connector.elasticsearch.source.reader.ElasticsearchLookupFullCacheLoader.REQUEST", Level.INFO);
     }
 
     @BeforeEach
@@ -56,7 +56,7 @@ public class FlinkSqlElasticsearch7DebugLookupTests extends ElasticsearchTestBas
     }
 
     @Test
-    @SetEnvironmentVariable(key = "ES_SOURCE_INDEX", value = "test_source_index") 
+    @SetEnvironmentVariable(key = "ES_SOURCE_INDEX", value = "test_source_index")
     @SetEnvironmentVariable(key = "ES_SOURCE_STOPPING_OFFSET_INTERVAL_MILLIS", value = "864000000") // 10 days
     @SetEnvironmentVariable(key = "ES_DIM_INDEX", value = "test_scan_index")
     @SetEnvironmentVariable(key = "ES_SINK_INDEX", value = "test_lookup_index")
@@ -65,7 +65,7 @@ public class FlinkSqlElasticsearch7DebugLookupTests extends ElasticsearchTestBas
     }
 
     @Test
-    @SetEnvironmentVariable(key = "ES_SOURCE_INDEX", value = "test_source_index") 
+    @SetEnvironmentVariable(key = "ES_SOURCE_INDEX", value = "test_source_index")
     @SetEnvironmentVariable(key = "ES_SOURCE_STOPPING_OFFSET_INTERVAL_MILLIS", value = "864000000") // 10 days
     @SetEnvironmentVariable(key = "ES_DIM_INDEX", value = "test_scan_index")
     @SetEnvironmentVariable(key = "ES_SINK_INDEX", value = "test_lookup_index")

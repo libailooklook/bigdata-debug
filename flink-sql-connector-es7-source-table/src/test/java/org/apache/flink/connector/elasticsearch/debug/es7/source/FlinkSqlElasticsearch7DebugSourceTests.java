@@ -42,14 +42,14 @@ public class FlinkSqlElasticsearch7DebugSourceTests extends ElasticsearchTestBas
     private static final Duration CHECKPOINT_INTERVAL = Duration.ofMinutes(5);
 
     @Test
-    @SetEnvironmentVariable(key = "ES_SOURCE_INDEX", value = "test_source_index") 
+    @SetEnvironmentVariable(key = "ES_SOURCE_INDEX", value = "test_source_index")
     @SetEnvironmentVariable(key = "ES_SINK_INDEX", value = "test_scan_index")
     public void testUnboundedSequenceSource() throws ExecutionException, InterruptedException, IOException {
         execute(PARALLELISM, CHECKPOINT_INTERVAL, RESOURCE_PATH + "/unbounded_sequence_mode.sql");
     }
 
     @Test
-    @SetEnvironmentVariable(key = "ES_SOURCE_INDEX", value = "test_source_index") 
+    @SetEnvironmentVariable(key = "ES_SOURCE_INDEX", value = "test_source_index")
     @SetEnvironmentVariable(key = "ES_SINK_INDEX", value = "test_scan_index")
     public void testBoundedSequenceSource() throws ExecutionException, InterruptedException, IOException {
         execute(PARALLELISM, CHECKPOINT_INTERVAL, RESOURCE_PATH + "/bounded_sequence_mode.sql");

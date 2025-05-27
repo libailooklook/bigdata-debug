@@ -4,7 +4,7 @@ temporary table source (
        `update_time` timestamp,
        `proc_time` as PROCTIME()
 ) with (
-       'connector' = 'elasticsearch-7-scan-ce',
+       'connector' = 'elasticsearch-7-ce',
        'hosts' = '${ES_SOURCE_HOST}',
        'username' = '${ES_SOURCE_USERNAME}',
        'password' = '${ES_SOURCE_PASSWORD}',
@@ -26,7 +26,7 @@ temporary table dim (
        `es_seq_no`   bigint METADATA from '_seq_no' VIRTUAL,
        primary key(id) not enforced
 ) with (
-       'connector' = 'elasticsearch-7-lookup-ce',
+       'connector' = 'elasticsearch-7-ce',
        'hosts' = '${ES_DIM_HOST}',
        'username' = '${ES_DIM_USERNAME}',
        'password' = '${ES_DIM_PASSWORD}',
@@ -46,7 +46,7 @@ temporary table sink (
        `es_seq_no`   bigint,
        primary key(id) not enforced
 ) with (
-       'connector' = 'elasticsearch-7-sink-ce',
+       'connector' = 'elasticsearch-7-ce',
        'hosts' = '${ES_SINK_HOST}',
        'username' = '${ES_SINK_USERNAME}',
        'password' = '${ES_SINK_PASSWORD}',

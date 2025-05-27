@@ -49,7 +49,7 @@ public class FlinkSqlElasticsearch6DebugSourceTests extends ElasticsearchTestBas
     }
 
     @Test
-    @SetEnvironmentVariable(key = "ES_SOURCE_INDEX", value = "test_source_index") 
+    @SetEnvironmentVariable(key = "ES_SOURCE_INDEX", value = "test_source_index")
     @SetEnvironmentVariable(key = "ES_SINK_INDEX", value = "test_scan_index")
     public void testBoundedSequenceSource() throws ExecutionException, InterruptedException, IOException {
         execute(PARALLELISM, CHECKPOINT_INTERVAL, RESOURCE_PATH + "/bounded_sequence_mode.sql");
@@ -78,7 +78,7 @@ public class FlinkSqlElasticsearch6DebugSourceTests extends ElasticsearchTestBas
     }
 
     @Test
-//    @SetEnvironmentVariable(key = "ES_SOURCE_INDEX", value = "test_source_index")
+    @SetEnvironmentVariable(key = "ES_SOURCE_INDEX", value = "test_source_index")
     @SetEnvironmentVariable(key = "ES_SINK_INDEX", value = "test_scan_index")
     @SetEnvironmentVariable(key = "ES_SOURCE_STOPPING_OFFSET_INTERVAL_MILLIS", value = "864000000") // 10 days
     public void testBoundedTimelineSource() throws ExecutionException, InterruptedException, IOException {
