@@ -50,7 +50,8 @@ temporary table sink (
        'hosts' = '${ES_SINK_HOST}',
        'username' = '${ES_SINK_USERNAME}',
        'password' = '${ES_SINK_PASSWORD}',
-       'index' = '${ES_SINK_INDEX}'
+       'index' = '${ES_SINK_INDEX}',
+       'sink.partition-routing.fields' = 'id'
 );
 
 insert into sink
