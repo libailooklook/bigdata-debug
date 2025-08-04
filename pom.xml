@@ -11,6 +11,7 @@
     <modules>
         <module>flink-sql-connector-es6-source-table</module>
         <module>flink-sql-connector-es7-source-table</module>
+        <module>flink-cep</module>
     </modules>
 
     <properties>
